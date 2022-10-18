@@ -10,7 +10,6 @@ import Card from "./components/Card";
 
 function App() {
 
-  // const LOCAL_STORAGE_KEY = 'contacts';
   const [contactList, setcontactList] = useState([])
   const [search, setSearch] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
@@ -59,7 +58,6 @@ function App() {
       if(contacts) setcontactList(contacts.allContacts)
     }
     getContact();
-
   }, []);
 
 

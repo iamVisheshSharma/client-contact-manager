@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import ContactCard from "./ContactCard";
 import Card from "./Card";
 
 export default function ContactList(props) {
@@ -12,17 +11,10 @@ export default function ContactList(props) {
 
   const renderConatctList = props.contacts.map((contact, index) => {
     return (
-      // <ContactCard
-      //   contact={contact}
-      //   clickHandler={deleteHandler}
-      //   key={contact.uuid}
-      // />
-
       <Card
         contact={contact}
         clickHandler={deleteHandler}
         key={contact.uuid}
-        class={props.contacts.length <= 2 ? "col-md-6" : "col-md-4"}
       />
     );
   });
@@ -46,7 +38,7 @@ export default function ContactList(props) {
           display: "flex",
         }}
       >
-        <div className="ui icon input" style={{ width: "100%", }}>
+        <div className="ui icon input" style={{ width: "100%" }}>
           <input
             ref={inputEl}
             type="text"
@@ -54,13 +46,13 @@ export default function ContactList(props) {
             id="search"
             className="prompt"
             placeholder="Search Contact"
-            value={props.seaarch}
+            value={props.search}
             onChange={getSearch}
           />
           <i className="search icon" />
         </div>
       </div>
-      <div className="container-fluid d-flex justify-content-center">
+      <div className="container d-flex justify-content-center pb-4">
         <div className="row">
           {renderConatctList.length > 0
             ? renderConatctList

@@ -1,17 +1,13 @@
 import { Link } from "react-router-dom";
-import user from "../images/images.jpg";
 import "./cardStyle.css";
 
 export default function Card(props) {
   return (
-    <div className={`${props.class} spacing`}>
-      <div className="card text-center">
-        {/* <div className="overflow">
-          <img src={user} alt="image" className="card-img-top" />
-        </div> */}
+    <div className={`col-xs-12 col-sm-6 col-md-4`}>
+      <div className="card text-center bg-warning w-100 mt-4">
         <div className="card-body text-dark">
-          <h4 className="card-title">{props.contact.name.toUpperCase()}</h4>
-          <p className="card-text">{props.contact.address}</p>
+          <h4 className="card-title font-weight-bold text-monospace">{props.contact.name.toUpperCase()}</h4>
+          <p className="card-text font-weight-normal">{props.contact.address}</p>
           <p className="card-text">
             Mobile No - {props.contact.contact_number}
           </p>
@@ -20,7 +16,7 @@ export default function Card(props) {
               Mobile No - {props.contact.alt_contact_number}
             </p>
           )}
-          <h4 className="card-text">GSTIN - {props.contact.gstin.toUpperCase()}</h4>
+          <p className="card-text">GSTIN - {props.contact.gstin.toUpperCase()}</p>
           <Link
             to={{
               pathname: `/contact/${props.contact.uuid}`,
